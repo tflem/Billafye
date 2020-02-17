@@ -1,0 +1,35 @@
+@model BillafyeViewModel
+
+@{
+  ViewData["Title"] = "Manage List of Bills";
+}
+
+<div class="panel panel-default bill-panel">
+  <div class="panel-heading">@ViewData["Title"]</div>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <td>&#x2714;</td>
+        <td>Item</td>
+        <td>Bill Due Date</td>
+      </tr>
+    </thead>
+
+    @foreach (var item in Model.Items)
+    {
+        <tr>
+          <td>
+            <input type="checkbox" class="paid-checkbox">
+          </td>
+          <td>@item.Name</td>
+          <td>@item.BillAmount</td>
+          <td>@item.DueDate</td>
+        </tr>
+    }
+  </table>
+
+  <div class="panel-footer add-item-form">
+    
+  </div>
+</div>
