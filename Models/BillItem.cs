@@ -12,7 +12,7 @@ namespace Billafye.Models
     public string Name { get; set; }
 
     [Required]
-    public int BillAmount { get; set; }
+    public decimal BillAmount { get; set; }
     public DateTimeOffset? DueDate { get; set; }
   }
 }
