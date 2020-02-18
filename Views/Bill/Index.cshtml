@@ -11,8 +11,9 @@
     <thead>
       <tr>
         <td>&#x2714;</td>
-        <td>Item</td>
-        <td>Bill Due Date</td>
+        <td>Name</td>
+        <td>Bill Amount</td>
+        <td>Due Date</td>
       </tr>
     </thead>
 
@@ -23,7 +24,7 @@
             <input type="checkbox" class="paid-checkbox">
           </td>
           <td>@item.Name</td>
-          <td>@item.BillAmount</td>
+          <td>$@item.BillAmount</td>
           <td>@item.DueDate</td>
         </tr>
     }
