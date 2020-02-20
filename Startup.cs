@@ -35,7 +35,7 @@ namespace Billafye
           .AddEntityFrameworkStores<ApplicationDbContext>();
       services.AddControllersWithViews();
       services.AddRazorPages();
-      services.AddSingleton<IBillItemService, FakeBillItemService>();
+      services.AddScoped<IBillItemService, BillItemService>();
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
