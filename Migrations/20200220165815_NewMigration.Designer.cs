@@ -7,11 +7,11 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
-namespace Billafye.Data.Migrations
+namespace Billafye.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200220043715_AddBillItems")]
-    partial class AddBillItems
+    [Migration("20200220165815_NewMigration")]
+    partial class NewMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
