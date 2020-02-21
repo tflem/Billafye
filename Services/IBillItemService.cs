@@ -8,5 +8,7 @@ namespace Billafye.Services
   public interface IBillItemService
   {
     Task<BillItem[]> GetUnpaidBillItemsAsync();
+
+    Task<bool> AddBillItemAsync(BillItem newBillItem);
   }
 }

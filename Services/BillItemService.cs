@@ -23,5 +23,18 @@ namespace Billafye.Services
         .Where(billItem => billItem.IsPaid == false)
         .ToArrayAsync();
     }
+
+    public async Task<bool> AddBillItemAsync(BillItem newBillItem)
+    {
+      newBillItem.Id = Guid.NewGuid();
+      newBillItem.IsPaid = false;
+      //newBillItem.DueDate = DateTimeOffset.Now.AddDays(3);
+
+      //_context.Items.Add(newBillItem);
+      _context.Items.Add(newBillItem);
+
+      var saveResult = await _context.SaveChangesAsync();
+      return saveResult == 1;
+    }
   }
 }

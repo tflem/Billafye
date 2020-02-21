@@ -11,6 +11,23 @@ namespace Billafye.Controllers
   public class BillController : Controller
   {
     // Actions Go Here
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> AddBillItem(BillItem newBillItem)
+    {
+      if (!ModelState.IsValid)
+      {
+        return RedirectToAction("Index");
+      }
+
+      var successful = await _billItemService.AddBillItemAsync(newBillItem);
+      if (!successful)
+      {
+        return BadRequest("Bill item not added.");
+      }
+
+      return RedirectToAction("Index");
+    }
+
     private readonly IBillItemService _billItemService;
 
     public BillController(IBillItemService billItemService)
